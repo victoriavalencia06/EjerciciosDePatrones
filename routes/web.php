@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Patterns\Factory\Controllers\FactoryController;
 use App\Patterns\Adapter\Controllers\AdapterController;
 use App\Patterns\Decorator\Controllers\DecoratorController;
+use App\Patterns\Strategy\Controllers\StrategyController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,3 +18,6 @@ Route::get('/adapter/{version}/{archivo}', [AdapterController::class, 'abrirArch
 
 // Decorator
 Route::get('/decorator/{tipo}', [DecoratorController::class, 'enviarNotificacion']);
+
+// Strategy
+Route::get('/strategy/{tipo}', [StrategyController::class, 'mostrar']);
