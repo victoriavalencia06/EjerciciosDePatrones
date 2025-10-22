@@ -14,18 +14,24 @@ class StrategyController extends Controller
     {
         $mensaje = "Bienvenido al sistema de estrategias de salida.";
 
-        $context = match ($tipo) {
-            'consola' => new MensajeContext(new SalidaConsola()),
-            'json'    => new MensajeContext(new SalidaJSON()),
-            'txt'     => new MensajeContext(new SalidaTXT()),
-            default   => throw new \Exception("Tipo de salida no válido."),
-        };
+        try {
+            $context = match ($tipo) {
+                'consola' => new MensajeContext(new SalidaConsola()),
+                'json'    => new MensajeContext(new SalidaJSON()),
+                'txt'     => new MensajeContext(new SalidaTXT()),
+                default   => throw new \Exception("Tipo de salida no válido: $tipo"),
+            };
 
-        $resultado = $context->ejecutar($mensaje);
+            $resultado = $context->ejecutar($mensaje);
 
-        return response()->json([
-            'tipo' => $tipo,
-            'resultado' => $resultado
-        ], 200, [], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            return response()->json([
+                'tipo' => $tipo,
+                'resultado' => $resultado
+            ], 200, [], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 400, [], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        }
     }
 }
