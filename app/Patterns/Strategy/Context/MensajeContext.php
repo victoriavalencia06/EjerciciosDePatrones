@@ -18,7 +18,7 @@ class MensajeContext
         $this->strategy = $strategy;
     }
 
-    public function ejecutar(string $mensaje): string
+    public function ejecutar(string $mensaje): mixed
     {
         return $this->strategy->mostrar($mensaje);
     }

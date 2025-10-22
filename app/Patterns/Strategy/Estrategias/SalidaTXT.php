@@ -8,7 +8,7 @@ class SalidaTXT implements ISalidaStrategy
 {
     public function mostrar(string $mensaje): string
     {
-        $ruta = storage_path('app/mensaje.txt');
+        $ruta = storage_path('app' . DIRECTORY_SEPARATOR . 'mensaje.txt');
         file_put_contents($ruta, $mensaje);
         return "📄 Mensaje guardado en archivo TXT: $ruta";
     }

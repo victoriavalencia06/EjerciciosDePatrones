@@ -4,5 +4,6 @@ namespace App\Patterns\Strategy\Interfaces;
 
 interface ISalidaStrategy
 {
-    public function mostrar(string $mensaje): string;
+    // Mostrar un mensaje según la estrategia.
+    public function mostrar(string $mensaje): mixed;
 }

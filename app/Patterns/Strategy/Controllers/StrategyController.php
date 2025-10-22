@@ -16,14 +16,16 @@ class StrategyController extends Controller
 
         $context = match ($tipo) {
             'consola' => new MensajeContext(new SalidaConsola()),
-            'json' => new MensajeContext(new SalidaJSON()),
-            'txt' => new MensajeContext(new SalidaTXT()),
-            default => throw new \Exception("Tipo de salida no válido."),
+            'json'    => new MensajeContext(new SalidaJSON()),
+            'txt'     => new MensajeContext(new SalidaTXT()),
+            default   => throw new \Exception("Tipo de salida no válido."),
         };
+
+        $resultado = $context->ejecutar($mensaje);
 
         return response()->json([
             'tipo' => $tipo,
-            'resultado' => $context->ejecutar($mensaje)
-        ]);
+            'resultado' => $resultado
+        ], 200, [], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
 }
