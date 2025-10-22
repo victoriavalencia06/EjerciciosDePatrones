@@ -17,7 +17,7 @@ Route::get('/factory/{nivel}', [FactoryController::class, 'crearPersonaje']);
 Route::get('/adapter/{version}/{archivo}', [AdapterController::class, 'abrirArchivo']);
 
 // Decorator
-Route::get('/decorator/{tipo}', [DecoratorController::class, 'enviarNotificacion']);
+Route::get('/decorator/armas/{personaje}/{arma}', [DecoratorController::class, 'atacarConArmas']);
 
 // Strategy
 Route::get('/strategy/{tipo}', [StrategyController::class, 'mostrar']);

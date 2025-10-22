@@ -121,10 +121,18 @@
             <!-- Decorator -->
             <div class="pattern-card">
                 <div class="pattern-title">Decorator</div>
-                <a href="http://127.0.0.1:8000/decorator/email" target="_blank" class="route-link">http://127.0.0.1:8000/decorator/email</a>
-                <a href="http://127.0.0.1:8000/decorator/sms" target="_blank" class="route-link">http://127.0.0.1:8000/decorator/sms</a>
-                <a href="http://127.0.0.1:8000/decorator/whatsapp" target="_blank" class="route-link">http://127.0.0.1:8000/decorator/whatsapp</a>
-                <a href="http://127.0.0.1:8000/decorator/todos" target="_blank" class="route-link">http://127.0.0.1:8000/decorator/todos</a>
+                <a href="http://127.0.0.1:8000/decorator/armas/guerrero/espada" target="_blank" class="route-link">
+                    http://127.0.0.1:8000/decorator/armas/guerrero/espada
+                </a>
+                <a href="http://127.0.0.1:8000/decorator/armas/guerrero/arco" target="_blank" class="route-link">
+                    http://127.0.0.1:8000/decorator/armas/guerrero/arco
+                </a>
+                <a href="http://127.0.0.1:8000/decorator/armas/arquero/arco" target="_blank" class="route-link">
+                    http://127.0.0.1:8000/decorator/armas/arquero/arco
+                </a>
+                <a href="http://127.0.0.1:8000/decorator/armas/arquero/espada" target="_blank" class="route-link">
+                    http://127.0.0.1:8000/decorator/armas/arquero/espada
+                </a>
             </div>
 
             <!-- Strategy -->
